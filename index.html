@@ -1,0 +1,161 @@
+<!doctype html>
+<h lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>PedeAki</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- LOGO OFICIAL -->
+    <header class="header" id="banner">
+      <div class="container">
+        <img
+          src="src/images/logotipopedeaki.png"
+          class="logo"
+          alt="Logo Pedeaki"
+        />
+      </div>
+
+      <!-- CARROSSEL BANNER 5 IMAGENS -->
+      <section class="banner">
+        <div class="carousel">
+          <img src="src/images/banners/banner1.png" class="slide" alt="Banner 1" />
+          <img src="src/images/banners/banner2.png" class="slide" alt="Banner 2" />
+          <img src="src/images/banners/banner3.png" class="slide" alt="Banner 3" />
+          <img src="src/images/banners/banner4.png" class="slide" alt="Banner 4" />
+          <img src="src/images/banners/banner5.png" class="slide" alt="Banner 5" />
+        </div>
+      </section>
+    </header>
+
+    <!-- BARRA MENU CATÁLOGO -->
+    <nav class="menu-categorias" id="menu-categorias">
+      <a href="#acougue" class="categoria-link" data-categoria="acougue">AÇOUGUE</a>
+      <a href="#hortifruti" class="categoria-link" data-categoria="hortifruti">HORTIFRUTI</a>
+      <a href="#mercearia" class="categoria-link" data-categoria="mercearia">MERCEARIA</a>
+      <a href="#bebidas" class="categoria-link" data-categoria="bebidas">BEBIDAS</a>
+      <a href="#limpeza" class="categoria-link" data-categoria="limpeza">LIMPEZA</a>
+    </nav>
+
+    <!-- CATALOGO DE PRODUTOS -->
+    <main>
+      <div class="container">
+        <h2 class="titulo-catalogo">Escolha seus produtos</h2>
+      </div>
+
+      <section id="acougue" class="categoria">
+        <div class="container">
+          <h2 class="categoria-titulo">Açougue</h2>
+          <div class="produtos-grid" id="acougue-produtos"></div>
+        </div>
+      </section>
+
+      <section id="hortifruti" class="categoria">
+        <div class="container">
+          <h2 class="categoria-titulo">Hortifruti</h2>
+          <div class="produtos-grid" id="hortifruti-produtos"></div>
+        </div>
+      </section>
+
+      <section id="mercearia" class="categoria">
+        <div class="container">
+          <h2 class="categoria-titulo">Mercearia</h2>
+          <div class="produtos-grid" id="mercearia-produtos"></div>
+        </div>
+      </section>
+
+      <section id="bebidas" class="categoria">
+        <div class="container">
+          <h2 class="categoria-titulo">Bebidas</h2>
+          <div class="produtos-grid" id="bebidas-produtos"></div>
+        </div>
+      </section>
+
+      <section id="limpeza" class="categoria">
+        <div class="container">
+          <h2 class="categoria-titulo">Limpeza</h2>
+          <div class="produtos-grid" id="limpeza-produtos"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CARRINHO DE COMPRAS -->
+    <aside class="carrinho">
+      <div class="container-carrinho">
+        <h3><i class="fas fa-shopping-cart"></i> Seu Pedido</h3>
+
+        <div class="carrinho-itens" id="lista-produtos">
+          <p class="carrinho-vazio">🛒 Seu carrinho está vazio</p>
+        </div>
+
+        <!-- DADOS DO CLIENTE -->
+<div class="dados-clientes">
+  <input type="text" id="nome-cliente" placeholder="Seu nome completo" />
+  <textarea
+    id="endereco-cliente"
+    placeholder="Rua, número, bairro, complemento"
+    rows="3"
+  ></textarea>
+  <textarea
+    id="observacao-cliente"
+    placeholder="Observação (opcional): troco, instruções especiais..."
+    rows="2"
+  ></textarea>
+</div>
+
+        <!-- TOTAL E BOTÃO FINALIZAR PEDIDO -->
+        <div class="carrinho-total">
+          <p>Total: <span id="total-pedido">R$ 0,00</span></p>
+          <button onclick="finalizarPedido()" class="btn-finalizar">
+            <i class="fab fa-whatsapp"></i> Finalizar Pedido
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <div class="footer-dev">
+        <a href="https://www.nokaiztecnologia.com.br" target="_blank" class="footer-link">
+          <img
+            class="logonokaiz"
+            src="src/images/logonokaiztecnologia.png"
+            alt="Nokaiz Tecnologia"
+          />
+        </a>
+        <span class="textsistem">2026 PedeAki - Nokaiz Tecnologia</span>
+      </div>
+    </footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="src/js/script.js"></script>
+
+    <!-- BOTÃO CARRINHO FLUTUANTE -->
+    <button id="btn-carrinho-flutuante" onclick="abrirCarrinho()">
+      🛒 <span id="carrinho-contador">0</span>
+    </button>
+
+    <!-- BOTÃO WHATSAPP DUVIDA -->
+    <a href="https://wa.me/5563999665779?text=Olá! Tenho uma dúvida sobre um produto."
+      target="_blank"
+      id="btn-whatsapp-duvida"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button 
+      id="btn-topo"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ⬆
+    </button>
+  </body>
+</html>
